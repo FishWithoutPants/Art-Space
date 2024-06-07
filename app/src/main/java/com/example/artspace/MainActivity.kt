@@ -8,6 +8,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -35,7 +36,9 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.artspace.ui.theme.ArtSpaceTheme
 
 class MainActivity : ComponentActivity() {
@@ -56,46 +59,74 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ArtSpaceLayout() {
-    Row(
+    Column(
         modifier = Modifier
             .statusBarsPadding()
             .fillMaxSize()
             .safeDrawingPadding()
             .verticalScroll(rememberScrollState()),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center) {
-        Button(onClick = { /*TODO*/ },
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center) {
+        Row(
             modifier = Modifier
-                .size(50.dp)
+                .fillMaxSize(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
         ) {
-        }
-        Column(modifier = Modifier,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .weight(0.15f)
+                    .size(50.dp)) {
+                Button(
+                    onClick = { /*TODO*/ }
+                ) {
+                }
+                Text(text = "<",
+                    fontSize = 24.sp,
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                )
+            }
             Surface(
                 shadowElevation = 4.dp,
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize()
+                    .padding(8.dp)
             ) {
                 Image(
                     painter = painterResource(R.drawable.lemon_squeeze),
                     modifier = Modifier
-                        .size(height = 400.dp, width = 250.dp)
                         .padding(4.dp),
                     contentScale = ContentScale.Fit,
                     //                contentDescription = stringResource()
                     contentDescription = "Some desc"
                 )
             }
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .weight(0.15f)
+                    .size(50.dp)) {
+                Button(
+                    onClick = { /*TODO*/ }
+                ) {
+                }
+                Text(text = ">",
+                    fontSize = 24.sp,
+                    modifier = Modifier
+                        .align(Alignment.Center))
+            }
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Spacer(Modifier.height(20.dp))
             Text(text = "Header")
             Text(text = "lower text")
-        }
-        Button(onClick = { /*TODO*/ },
-            modifier = Modifier
-                .size(50.dp)
-        ) {
-
         }
     }
 }
