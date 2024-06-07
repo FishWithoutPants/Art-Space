@@ -9,7 +9,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
@@ -66,12 +68,14 @@ fun ArtSpaceLayout() {
         ) {
             Surface(
                 shadowElevation = 4.dp,
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier
+                    .padding(8.dp)
+                    .fillMaxHeight(0.5F)
             ) {
                 Image(
                     painter = painterResource(R.drawable.lemon_squeeze),
                     modifier = Modifier
-                        .fillMaxSize(0.8f)
+                        .fillMaxWidth(0.8f)
                         //.size(height = 400.dp, width = 250.dp)
                         .padding(4.dp),
                     contentScale = ContentScale.Fit,
