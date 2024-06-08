@@ -16,8 +16,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.ArrowForward
@@ -32,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
@@ -78,7 +79,7 @@ fun ArtSpaceLayout() {
                 if (pictureNumber > 1) {
                     pictureNumber--
                 } else {
-                    pictureNumber = 1
+                    pictureNumber = 16
                 }
             }
         )
@@ -150,7 +151,7 @@ fun ArtSpaceLayout() {
                 if (pictureNumber < 16) {
                     pictureNumber++
                 } else {
-                    pictureNumber = 16
+                    pictureNumber = 1
                 }
             }
         )
@@ -164,11 +165,12 @@ fun ArrowButton(
     contentDescription: String,
     onClick: () -> Unit
 ) {
-    Box {
+    Box(modifier = modifier
+        .clip(CircleShape)
+    ) {
         Button(
             onClick = onClick,
-            modifier = modifier
-                .size(50.dp)
+            modifier = Modifier
         ) {
 
         }
@@ -176,7 +178,7 @@ fun ArrowButton(
             imageVector = icon,
             contentDescription = contentDescription,
             tint = Color.Black,
-            modifier = Modifier
+            modifier = modifier
                 .align(Alignment.Center)
         )
     }
