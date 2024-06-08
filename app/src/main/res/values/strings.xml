@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Art Space</string>
+    <string name="pic1_title">Trollface</string>
+    <string name="pic1_desc">The peak of human humor</string>
+    <string name="pic2_title">Pic2</string>
+    <string name="pic2_desc">Idunno</string>
+    <string name="pic3_title">Pic3</string>
+    <string name="pic3_desc">Idunno</string>
+    <string name="pic4_title">Pic4</string>
+    <string name="pic4_desc">Idunno</string>
+    <string name="pic5_title">Pic5</string>
+    <string name="pic5_desc">Idunno</string>
+    <string name="pic6_title">Pic6</string>
+    <string name="pic6_desc">Idunno</string>
+    <string name="pic7_title">Pic7</string>
+    <string name="pic7_desc">Idunno</string>
+    <string name="pic8_title">Pic8</string>
+    <string name="pic8_desc">Idunno</string>
+    <string name="pic9_title">Pic9</string>
+    <string name="pic9_desc">Idunno</string>
+    <string name="pic10_title">Pic10</string>
+    <string name="pic10_desc">Idunno</string>
+    <string name="pic11_title">Pic11</string>
+    <string name="pic11_desc">Idunno</string>
+    <string name="pic12_title">Pic12</string>
+    <string name="pic12_desc">Idunno</string>
+    <string name="pic13_title">Pic13</string>
+    <string name="pic13_desc">Idunno</string>
+    <string name="pic14_title">Pic14</string>
+    <string name="pic14_desc">Idunno</string>
+    <string name="pic15_title">Pic15</string>
+    <string name="pic15_desc">Idunno</string>
+    <string name="pic16_title">Pic16</string>
+    <string name="pic16_desc">Idunno</string>
 </resources>
