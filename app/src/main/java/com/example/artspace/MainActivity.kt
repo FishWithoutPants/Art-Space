@@ -5,8 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -21,8 +21,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.ArrowForward
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -165,21 +165,16 @@ fun ArrowButton(
     contentDescription: String,
     onClick: () -> Unit
 ) {
-    Box(modifier = modifier
-        .clip(CircleShape)
+    IconButton(
+        onClick = onClick,
+        modifier = modifier
+            .clip(CircleShape)
+            .background(Color.Black)
     ) {
-        Button(
-            onClick = onClick,
-            modifier = Modifier
-        ) {
-
-        }
         Icon(
             imageVector = icon,
             contentDescription = contentDescription,
-            tint = Color.Black,
-            modifier = modifier
-                .align(Alignment.Center)
+            tint = Color.White,
         )
     }
 }
